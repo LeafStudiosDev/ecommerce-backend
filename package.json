@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "leaf",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "nodemon": "2.0.19",
     "standard": "17.0.0"
