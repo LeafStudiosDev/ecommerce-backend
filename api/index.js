@@ -10,6 +10,10 @@ app.use('/api',api)
 
 app.use(express.json())
 app.use(cors())
-const PORT = 3001
-app.listen(PORT)
-console.log(`server funcionando en puerto : ${PORT}`)
+
+const PORT = process.env.PORT || 3001
+
+app.listen(PORT, () => {
+
+  console.log(`server funcionando en puerto : ${PORT}`)
+})
