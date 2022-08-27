@@ -7,6 +7,7 @@ dependencias de desarrollo acutales (sujetas a cambio)
 - cors
 - mongoose (conexion db)
 - mongoose-unique-validator
+- morgan (visualizacoin de peticones http en consola en tiempo real)
 
 usar en la linea de comandos en la CARPETA del proyecto el siguiente comando
 - npm install
@@ -14,7 +15,7 @@ usar en la linea de comandos en la CARPETA del proyecto el siguiente comando
 #############################
 
 se requiere intalar node 16.17
-docker desktop
+
 
 
 - editor de texto a convenir, recomendacion personal VSCode
@@ -32,5 +33,4 @@ crear su propio archivo .env para manejar variables de entorno y respetar dichas
 
 ########################################
 
-puntos pendientes por hacer
-- establecer docker para el proyecto (en curso)
+
