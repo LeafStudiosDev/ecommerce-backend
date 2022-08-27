@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
+    "lint": "eslint .",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "leaf",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "8.22.0",
     "nodemon": "2.0.19",
     "standard": "17.0.0"
   },

@@ -1,6 +1,6 @@
 const express = require('express')
 const cors= require('cors')
-const { response } = require('express')
+
 
 
 
@@ -12,7 +12,7 @@ app.use(cors())
 
 
 app.get('/',(request,response)=>{
-    response.send('<h1>hola mundo<h/1>')
+  response.send('<h1>hola mundo<h/1>')
 })
 
 
