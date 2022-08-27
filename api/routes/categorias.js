@@ -3,7 +3,18 @@ const router = express.Router()
 
 
 router.get('/',(req,res)=>{
-  res.send('Lista de todas las categorias')
+  res.send('lista  categorias')
 })
 
-module.exports=router
+router.put('/',(req,res)=>{
+  res.send('actualiza item lista de todos los categorias')
+})
+
+router.delete('/',(req,res)=>{
+  res.send('borra item de lista de todos los categorias')
+})
+
+router.post('/',(req,res)=>{
+  res.send('add item de lista de todos los categorias')
+})
+module.exports=router 
