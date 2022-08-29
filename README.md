@@ -20,7 +20,6 @@ se requiere intalar node 16.17
 
 - editor de texto a convenir, recomendacion personal VSCode
 - extensiones para el mismo
-- docker
 - tabnine
 - prettier (configuracion necesaria)
 - eslint (configuracion necesaria)
