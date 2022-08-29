@@ -1,16 +1,13 @@
 
-const {schema, model} = require('mongoose')
-const productSchema= new schema({
+const {Schema, model} = require('mongoose')
+const productSchema= new Schema({
   Slug: String,
   desc: String,
   name: String,
   price: Number,
   Discount: String,
   total_price: Number,
-  categoria: {
-    type: schema.Types.ObjectId,
-    ref : 'categorias'
-  }
+  categoria: String
 })
 
 productSchema.set('toJSON',{
