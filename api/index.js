@@ -9,10 +9,6 @@ app.use('/', (req, res) => {
     mensaje: 'hola mundo'
   })
 })
-//middlewares de routing error
-// app.use(middlewares)
-// app.use(middlewares.errorHandler)
-
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
