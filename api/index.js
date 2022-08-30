@@ -3,7 +3,7 @@ const express = require('express')
 const api = require('./routes')
 const app = express()
 
-app.use('/api',api)
+app.use('/api', api)
 
 //middlewares de routing error
 // app.use(middlewares)
