@@ -4,7 +4,11 @@ const api = require('./routes')
 const app = express()
 
 app.use('/api', api)
-
+app.use('/', (req, res) => {
+  res.json({
+    mensaje: 'hola mundo'
+  })
+})
 //middlewares de routing error
 // app.use(middlewares)
 // app.use(middlewares.errorHandler)
