@@ -4,12 +4,27 @@ const Categoria = require('../models/Categorias')
 
 
 router.get('/',(req,res)=>{
-  res.send('lista  categorias')
+  
+  Categoria.find({}).then(categorias => {
+    res.json(categorias)
+  })
 })
 
-router.put('/',(req,res)=>{
-  res.send('actualiza item lista de todos los categorias')
-  //TODO: realizar actualizacion REST API hacia mongo
+router.put('/:id',(req,res,next)=>{
+  // res.send('actualiza item lista de todos los categorias')
+  //TODO: realizar actualizacion de categorias por nombre REST API hacia mongo
+  const {id} = req.params
+  const categoria = req.body
+  const newCategoriaInfo= {
+    Slug: categoria.content,
+    desc: categoria.desc,
+    name: categoria.name
+  }
+  Categoria.findByIdAndUpdate(id,newCategoriaInfo,{new:true})
+    .then(result =>{
+      res.json(result)
+    }).catch(next)
+
 
 })
 

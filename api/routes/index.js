@@ -1,7 +1,7 @@
 const express= require('express')
 const router = express.Router()
 
-const productosRouter = require('./Productos')
+const productosRouter = require('./productos')
 const categoriasRouter = require('./categorias')
 
 router.use('/productos',productosRouter)

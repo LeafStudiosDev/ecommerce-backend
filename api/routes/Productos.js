@@ -4,11 +4,30 @@ const Producto = require('../models/productos')
 
 
 router.get('/',(req,res)=>{
-  res.send('lista items de productos')
+
+  Producto.find({}).then(Productos => {
+    res.json(Productos)
+  })
 })
 
-router.put('/',(req,res)=>{
-  res.send('actualiza item lista de todos los productos')
+router.put('/:id',(req,res,next)=>{
+  const {id} = req.params
+  const producto = req.body
+
+  const newProductoInfo= {
+    Slug: producto.content,
+    desc: producto.desc,
+    name: producto.name,
+    price: producto.price,
+    Discount: producto.Discount,
+    total_price: producto.total_price,
+    categoria: producto.categoria
+  }
+  Producto.findByIdAndUpdate(id,newProductoInfo,{new:true})
+    .then(result =>{
+      res.json(result)
+    }).catch(next)
+
 })
 
 router.delete('/',(req,res)=>{
@@ -16,7 +35,7 @@ router.delete('/',(req,res)=>{
 })
 
 router.post('/',async (req,res,next)=>{
-  // res.send('add item de lista de todos los productos')
+
   //* realiza insercion producto REST API hacia mongo
   const {
     content,
