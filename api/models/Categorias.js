@@ -1,9 +1,8 @@
-const {schema, model} = require('mongoose')
-const categoriaSchema= new schema({
+const {Schema, model} = require('mongoose')
+const categoriaSchema= new Schema({
   Slug: String,
   desc: String,
   name: String
- 
 })
 
 categoriaSchema.set('toJSON',{
