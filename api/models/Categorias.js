@@ -8,8 +8,11 @@ const categoriaSchema= new Schema({
 categoriaSchema.set('toJSON',{
   transform: (document, returnedObject)=>{
     returnedObject.id = returnedObject._id
+    returnedObject.v=returnedObject.__v
     delete returnedObject.id
     delete returnedObject._id
+    delete returnedObject.v
+    delete returnedObject.__v
   }
 })
 

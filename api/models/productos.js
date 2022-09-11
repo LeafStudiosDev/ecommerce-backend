@@ -13,8 +13,11 @@ const productSchema= new Schema({
 productSchema.set('toJSON',{
   transform: (document, returnedObject)=>{
     returnedObject.id = returnedObject._id
+    
     delete returnedObject.id
     delete returnedObject._id
+    delete returnedObject.v
+    delete returnedObject.__v
   }
 })
 
