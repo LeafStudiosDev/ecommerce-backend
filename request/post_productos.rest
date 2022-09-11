@@ -4,7 +4,7 @@ Content-Type: application/json
 {
     "content": "0123456789",
     "desc": "esta es una prueba de producto",
-    "name": "linea blanca",
+    "name": "nevera",
     "price": 100,
     "Discount": "30",
     "total_price": 100,
