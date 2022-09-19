@@ -12,7 +12,7 @@ router.get('/',(req,res)=>{
 
 router.put('/:id',(req,res,next)=>{
   // res.send('actualiza item lista de todos los categorias')
-  //TODO: realizar actualizacion de categorias por nombre REST API hacia mongo
+  //* realiza actualizacion de categorias por nombre REST API hacia mongo
   const {id} = req.params
   const categoria = req.body
   const newCategoriaInfo= {
@@ -28,8 +28,11 @@ router.put('/:id',(req,res,next)=>{
 
 })
 
-router.delete('/',(req,res)=>{
-  res.send('borra item de lista de todos los categorias')
+router.delete('/:id', async (req,res)=>{
+  const { id } = req.params
+  const result = await Categoria.findByIdAndDelete(id)
+  if (result === null) return res.sendStatus(404)
+  res.status(204).end()
 })
 
 router.post('/',async (req,res,next)=>{
