@@ -29,14 +29,15 @@ router.put('/:id',(req,res,next)=>{
     }).catch(next)
 
 })
-
-router.delete('/',(req,res)=>{
-  res.send('borra item de lista de todos los productos')
+router.delete('/:id',async(req,res)=>{
+  const { id } = req.params
+  const result = await Producto.findByIdAndDelete(id)
+  if (result === null) return res.sendStatus(404)
+  res.status(204).end()
 })
 
+//* realiza insercion producto REST API hacia mongo
 router.post('/',async (req,res,next)=>{
-
-  //* realiza insercion producto REST API hacia mongo
   const {
     content,
     desc,
@@ -69,6 +70,4 @@ router.post('/',async (req,res,next)=>{
   }
 
 })
-
-
 module.exports=router

@@ -1,1 +1,1 @@
-GET http://localhost:3001/api/Categorias
+GET http://localhost:3001/api/categorias
